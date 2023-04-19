@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiber Login Page</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+    <main>
+        <section class="section-login">
+            <div class="section-login-1">
+                <div class="section-login-1-main">
+                    <div class="section-login-1-logo">
+                        <a href="index.html">Fiber</a>
+                    </div>
+                    <h1 class="section-login-1-title">Create your Fiber account</h1>
+                    <div class="section-login-1-form">
+                        <div class="login-form-1">
+                            <label for="input-name">Your Name</label>
+                            <input type="text" id="input-name" placeholder="John Doe">
+                        </div>
+                        <div class="login-form-2">
+                            <label for="input-email">E-mail</label>
+                            <input type="text" id="input-email" placeholder="john@example.com">
+                        </div>
+                        <div class="login-form-3">
+                            <label for="input-password">Password</label>
+                            <input type="password" id="input-password" placeholder="At least 8 characters">
+                        </div>
+                        <div class="login-form-4">
+                            <input type="checkbox" id="input-checkbox">
+                            <p>By creating an account on Fiber, you agree to the <a href="#">Terms & Conditions.</a></p>
+                        </div>
+                        <div class="login-form-submit-btn">
+                            <button>Create Fiber Account</button>
+                        </div>
+                        <div class="login-form-5">
+                            <p>Already have an account? <a href="#">Sign In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-login-2">
+                <div class="section-login-2-main">
+
+                    <div class="slideshow-container">
+
+                        <div class="mySlides fade">
+                            <div class="mySlider-main">
+                                <img src="./Assets/Page-Image.png" style="width:100%">
+                                <div class="caption">
+                                    <h1 class="caption-title">Website Templates</h1>
+                                    <p class="caption-text">Crafted by a team of professional designers, our templates are eunparalleled in the market.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                            <div class="mySlider-main">
+                                <img src="./Assets/Sign-Up-Image.png" style="width:100%">
+                                <div class="caption">
+                                    <h1 class="caption-title">Unparalleled Templates</h1>
+                                    <p class="caption-text">Crafted by a team of professional designers, our templates are eunparalleled in the market.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br>
+                        
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        
+    </script>
+    
+</body>
+</html>
